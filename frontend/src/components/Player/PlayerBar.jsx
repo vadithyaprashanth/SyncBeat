@@ -34,7 +34,8 @@ export default function PlayerBar({
       setCurrentTime(0);
       setDuration(0);
     }
-  }, [song?.id]);
+    // Added 'song' to dependencies to satisfy ESLint/Vercel build
+  }, [song]);
 
   // ── Play / Pause ───────────────────────────────────────
   useEffect(() => {
