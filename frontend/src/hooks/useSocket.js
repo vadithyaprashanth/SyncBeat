@@ -15,7 +15,7 @@ export const useSocket = (token) => {
 
     const socket = io(process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000', {
       auth: { token },
-      transports: ['websocket', 'polling'],
+      transports: ['polling'],
     });
 
     socket.on('connect', () => console.log('Socket connected:', socket.id));
